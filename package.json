@@ -1,7 +1,7 @@
 {
   "name": "project-template-cli",
   "version": "1.0.0",
-  "description": "",
+  "description": "Create projects easier 🪄",
   "main": "build/index.js",
   "scripts": {
     "start": "pnpm clean && pnpm build && pnpm execute",
@@ -12,7 +12,6 @@
     "lint": "eslint .",
     "prettier": "prettier -c .",
     "prettier-fix": "prettier -w .",
-    "mirror-config": "bash scripts/mirror_config.sh",
     "prepare": "husky install"
   },
   "engines": {
