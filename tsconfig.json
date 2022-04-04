@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "alwaysStrict": true,
+    "baseUrl": ".",
+    "declaration": false,
+    "emitDecoratorMetadata": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "lib": ["ESNext"],
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "noEmit": false,
+    "noEmitOnError": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "outDir": "./build",
+    "paths": {
+      "@app/*": ["./src/*"]
+    },
+    "removeComments": true,
+    "resolveJsonModule": true,
+    "rootDir": "./src",
+    "strict": true,
+    "target": "ESNext"
+  },
+  "include": ["./src/**/*.ts"],
+  "exclude": ["node_modules", "build"],
+
+  "tsc-alias": {
+    "replacers": {
+      "base-url": { "enabled": false }
+    }
+  }
+}

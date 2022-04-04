@@ -1,0 +1,6 @@
+{
+  "clear": true,
+  "notify": false,
+  "respawn": true,
+  "ignore": ["node_modules", "build", "coverage", "cache"]
+}
