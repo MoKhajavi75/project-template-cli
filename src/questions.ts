@@ -14,7 +14,7 @@ export type Answers = {
 
 registerPrompt('directory', selectDirectory);
 
-export const questions = async () =>
+export const questions = (): Promise<Answers> =>
   prompt([
     {
       name: 'name',
@@ -22,14 +22,9 @@ export const questions = async () =>
       default: 'my-project',
       validate: name => {
         const { validForNewPackages, warnings, errors } = validateName(name);
-        const err = ['', ...(errors || []), ...(warnings || [])].join('\n❌ ');
+        const err = [...(errors || []), ...(warnings || [])].join(`\n${chalk.red('>> ')}`);
 
-        if (!validForNewPackages) {
-          console.log(`${chalk.red(err)}\n`);
-          return false;
-        }
-
-        return true;
+        return validForNewPackages || err;
       }
     },
     {
@@ -43,11 +38,7 @@ export const questions = async () =>
       validate: url => {
         const regex = /^git@[a-zA-Z0-9-]*.com:[a-zA-Z0-9-]*\/[a-zA-Z0-9/-]*.git/;
 
-        if (!regex.test(url)) {
-          console.log(chalk.red('\n❌ Please enter a valid ssh project url'));
-          return false;
-        }
-        return true;
+        return regex.test(url) || 'Please enter a valid ssh project url';
       }
     },
     {
