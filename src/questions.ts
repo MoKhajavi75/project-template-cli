@@ -1,4 +1,3 @@
-import chalk from 'chalk';
 import { prompt, registerPrompt } from 'inquirer';
 // eslint-disable-next-line
 // @ts-ignore
@@ -22,7 +21,9 @@ export const questions = (): Promise<Answers> =>
       default: 'my-project',
       validate: name => {
         const { validForNewPackages, warnings, errors } = validateName(name);
-        const err = [...(errors || []), ...(warnings || [])].join(`\n${chalk.red('>> ')}`);
+        const red = '\x1b[31m';
+        const normal = '\x1b[0m';
+        const err = [...(errors || []), ...(warnings || [])].join(`\n${red}>> ${normal}`);
 
         return validForNewPackages || err;
       }
