@@ -9,6 +9,7 @@ export type Answers = {
   description: string;
   url: string;
   force: boolean;
+  removeJest: boolean;
   directory: string;
 };
 
@@ -48,6 +49,12 @@ export const questions = (): Promise<Answers> =>
       message: 'Force push:',
       type: 'confirm',
       default: false
+    },
+    {
+      name: 'removeJest',
+      message: 'Remove Jest:',
+      type: 'confirm',
+      default: true
     },
     {
       name: 'directory',

@@ -17,7 +17,10 @@ export const setup = async (answers: Answers) => {
     -e 's~"name": ".*"~"name": "${answers.name}"~' \
     -e 's~"description": ".*"~"description": "${answers.description}"~' \
     -e 's~"url": ".*"~"url": "${answers.url}"~' \
+    ${answers.removeJest ? `-e '/"test":/d'` : ''} \
     package.json \
+  ${answers.removeJest ? '&& pnpm rm jest @types/jest' : ''} \
+  ${answers.removeJest ? '&& rm -f jest.config.json' : ''} \
   && git reset $(git commit-tree HEAD^{tree} -m "chore: initial commit") \
   && git add . \
   && git commit --amend -n --no-edit \
