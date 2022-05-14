@@ -8,6 +8,7 @@ export type Answers = {
   name: string;
   description: string;
   url: string;
+  force: boolean;
   directory: string;
 };
 
@@ -41,6 +42,12 @@ export const questions = (): Promise<Answers> =>
 
         return regex.test(url) || 'Please enter a valid ssh project url';
       }
+    },
+    {
+      name: 'force',
+      message: 'Force push:',
+      type: 'confirm',
+      default: false
     },
     {
       name: 'directory',

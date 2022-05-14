@@ -21,6 +21,6 @@ export const setup = async (answers: Answers) => {
   && git reset $(git commit-tree HEAD^{tree} -m "chore: initial commit") \
   && git add . \
   && git commit --amend -n --no-edit \
-  && git push origin master -u`
+  && git push origin master -u ${answers.force ? '-f' : ''}`
   );
 };
