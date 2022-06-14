@@ -9,8 +9,8 @@
     "build": "tsc && tsc-alias",
     "execute": "node build/index.js",
     "dev": "node-dev -r tsconfig-paths/register src/index.ts",
-    "lint": "eslint .",
-    "prettier": "prettier -c .",
+    "lint": "eslint . --cache",
+    "prettier": "prettier -c . --cache",
     "format": "prettier -w .",
     "prepare": "husky install"
   },
