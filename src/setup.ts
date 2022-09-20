@@ -1,12 +1,9 @@
-import { createDir } from './createDir';
 import type { Answers } from './questions';
 import { shellExecuter } from './shellExecuter';
 
 export const setup = async (answers: Answers) => {
   const projectDir = `${answers.directory}/${answers.name}`;
   const templateUrl = 'git@github.com:MohamadKh75/project-template.git';
-
-  await createDir(projectDir);
 
   await shellExecuter(
     `cd ${projectDir} \

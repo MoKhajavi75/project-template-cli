@@ -27,7 +27,6 @@
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
-    "@types/mkdirp": "^1.0.2",
     "@types/node": "^18.7.18",
     "@types/validate-npm-package-name": "^4.0.0",
     "@typescript-eslint/eslint-plugin": "^5.37.0",
@@ -46,7 +45,6 @@
     "@types/inquirer": "^8.2.3",
     "inquirer": "^8.2.4",
     "inquirer-select-directory": "^1.2.0",
-    "mkdirp": "^1.0.4",
     "validate-npm-package-name": "^4.0.0"
   }
 }
