@@ -39,7 +39,7 @@ export const questions = (): Promise<Answers> =>
       name: 'url',
       message: 'Project url:',
       validate: url => {
-        const regex = /^git@[a-zA-Z0-9-]*.com:[a-zA-Z0-9-]*\/[a-zA-Z0-9/-]*.git/;
+        const regex = /^git@[a-zA-Z0-9-.]+:[a-zA-Z0-9-]*\/[a-zA-Z0-9/-]*.git/;
 
         return regex.test(url) || 'Please enter a valid ssh project url';
       }
